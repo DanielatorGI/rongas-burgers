@@ -1,0 +1,352 @@
+:root {
+    --primary-red: #cc2e2d;
+    --primary-yellow: #eca124;
+    --bg-white: #ffffff;
+    --text-dark: #333333;
+    --bg-light: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+/* --- NAVEGACIÓN --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-red);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    background-color: var(--bg-white);
+    padding: 2px;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-yellow);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--bg-white); 
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-yellow);
+}
+
+.btn-destacado {
+    background-color: var(--primary-yellow);
+    color: var(--primary-red) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.btn-destacado:hover {
+    transform: scale(1.05);
+}
+
+/* --- CARRUSEL --- */
+.carousel-container {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+/* --- SECCIONES GENERALES --- */
+.section-container {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.bg-light { background-color: var(--bg-light); }
+
+h2 {
+    color: var(--primary-red);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+/* --- HISTORIA --- */
+.texto-historia {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.texto-historia p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+/* --- SUCURSALES --- */
+.sucursales-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sucursal-card {
+    position: relative;
+    width: 45%;
+    min-width: 300px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.sucursal-card:hover {
+    transform: scale(1.05);
+}
+
+.sucursal-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--bg-white);
+    padding: 1rem;
+}
+
+/* --- TARJETAS DE HAMBURGUESAS --- */
+.burger-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--bg-white);
+    margin: 0 auto 2rem auto;
+    max-width: 850px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    border-left: 5px solid var(--primary-yellow);
+}
+
+.burger-img {
+    width: 280px;
+    height: auto;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+.burger-text {
+    padding: 2rem;
+    text-align: left;
+    flex: 1;
+}
+
+.burger-title {
+    color: var(--primary-red);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.burger-desc {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* --- CINTA SOCIAL (DELIVERY) --- */
+.cinta-social {
+    background-color: var(--primary-yellow);
+    padding: 1.5rem 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cinta-titulo {
+    color: var(--primary-red);
+    font-size: 1.6rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.social-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-link img {
+    width: 45px;
+    height: auto;
+    border-radius: 0;
+    transition: transform 0.3s;
+}
+
+.social-link img:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   MEDIA QUERIES - SUMISIÓN A PANTALLAS MÓVILES 
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* La barra de navegación se apila dócilmente */
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    /* Reducción del tamaño de los títulos para no desbordar */
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    /* El texto de la historia se hace más pequeño y ajustado */
+    .texto-historia p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* Las sucursales toman todo el ancho disponible */
+    .sucursal-card {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    /* Las tarjetas de hamburguesas colapsan en vertical */
+    .burger-card {
+        flex-direction: column;
+        border-left: none; /* Quitamos el borde izquierdo... */
+        border-top: 5px solid var(--primary-yellow); /* ...y lo ponemos arriba como un coqueto detalle */
+    }
+
+    .burger-img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .burger-text {
+        padding: 1.5rem;
+        text-align: center; /* Centrado para que se vea más armonioso en el celular */
+    }
+
+    .burger-title {
+        font-size: 1.3rem;
+    }
+
+    /* Ajustes sutiles en la cinta social */
+    .cinta-titulo {
+        font-size: 1.2rem;
+    }
+}
+/* --- NAVEGACIÓN CORREGIDA --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-red);
+    padding: 1rem 5%;
+    
+    /* Cambiamos de sticky a fixed para someterla totalmente a la pantalla */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    
+    /* Transform es mucho más suave y potente que animar el 'top' */
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Esta es la clase que mi JavaScript usará para obligarme a desaparecer */
+.navbar.nav-hidden {
+    transform: translateY(-100%);
+}
+
+/* Como ahora la barra flota encima de todo, le daremos un respiro al contenido 
+   para que no empiece escondido debajo de ella. */
+body {
+    padding-top: 80px; 
+}
+
+/* En el bloque de @media (max-width: 768px) que ya tiene al final, 
+   agregue este ajuste para el cuerpo de la página: */
+@media (max-width: 768px) {
+    body {
+        padding-top: 180px; /* Compensamos el tamaño de la barra apilada */
+    }
+    
+    /* El resto de sus estilos móviles aquí... */
+}
